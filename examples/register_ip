@@ -29,6 +29,6 @@ r = bunq_api.query('device-server', {'description': description, 'secret': api_k
 # r.json()['Response'][1]['Token'] would work too, but I mistrust predefined
 # order, never know when someone starts shuffling things around
 if r.status_code == 200:
-    pprint([x for x in r.json()['Response'] if list(x)[0] == 'Token'][0])
+    pprint([x for x in r.json()['Response']])
 else:
     pprint(r.json()['Error'][0])
